@@ -1,0 +1,44 @@
+  - name: update the cahche & install '{{ service }}'
+    apt:
+      name: '{{ service }}'
+      state: present
+      #update_cache: yes
+        
+
+  - name: 'SECOND_TASK: enable service for "{{ service }}"'
+    service:
+     name: '{{ service }}'
+     state: started
+     enabled: yes
+    notify: Restart Apache
+    
+
+
+  - name: 'THIRD_TASK: create 5 users'
+    user:
+     name: '{{ item }}'
+    loop: '{{user}}'
+    register: result
+    
+  - name: 'result of create user'
+    debug:
+      var: result
+
+  - name: 'FOURTH_TASK: update(add line ) in resolve.conf file'
+    lineinfile:
+     path: '/etc/resolv.conf'
+     line: 'nameserver "{{ nameserver_ip }}" '
+
+  - name: 'FIVETH_TASK: Run Script to list all user'
+    script: '/home/lina/Desktop/ansible_last/script.sh'
+    register: res2
+
+  - name: 'result of script'
+    debug:
+      var: res2
+   
+  
+  
+       
+
+

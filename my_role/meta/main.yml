@@ -1,0 +1,11 @@
+---
+galaxy_info:
+  role_name: system_setup
+  author: Lina Mohamed
+  description: >
+    An Ansible role to install and enable a system service, create multiple users,
+    execute a script to list existing users, and use handlers to notify when the
+    service is successfully installed.
+  license: MIT
+  min_ansible_version: 2.9
+

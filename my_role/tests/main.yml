@@ -1,0 +1,4 @@
+joka ansible_host=192.168.235.140 ansible_connection=ssh ansible_user=joka ansible_ssh_pass=ash 
+ash ansible_host=192.168.235.141 ansible_connection=ssh ansible_user=ash ansible_ssh_pass=ash
+#localhost
+

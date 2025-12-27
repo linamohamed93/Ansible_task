@@ -1,0 +1,9 @@
+service: apache2
+user:
+  - user1
+  - user2
+  - user3
+  - user4
+  - user5
+nameserver_ip: 8.8.8.8
+
